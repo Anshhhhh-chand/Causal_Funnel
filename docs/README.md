@@ -118,5 +118,3 @@ The SDK is intentionally small and framework-independent. It sends events immedi
 - A page URL does not identify a particular page layout/version; heatmaps for materially different versions should be interpreted as coordinate data.
 - The dashboard caps one session response at 1,000 events and one heatmap response at 10,000 clicks; the API reports cursors/truncation for larger data sets.
 - No authentication or personal identity resolution is included because it is outside the assignment scope.
-
-See `docs/IMPLEMENTATION_PLAN.md`, `docs/ARCHITECTURE.md`, and `docs/REQUIREMENTS_CHECKLIST.md` for the detailed design and verification record.
