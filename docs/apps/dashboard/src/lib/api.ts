@@ -1,6 +1,7 @@
 import type { HeatmapPoint, JourneyEvent, PageSummary, PaginatedResponse, SessionSummary } from '@causalfunnel/contracts';
 
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL as string | undefined) ?? 'http://localhost:4000/api';
+const rawBase = ((import.meta.env.VITE_API_BASE_URL as string | undefined) ?? 'http://localhost:4000/api').trim().replace(/\/+$/, '');
+const API_BASE_URL = rawBase.endsWith('/api') ? rawBase : `${rawBase}/api`;
 
 export class ApiError extends Error {
   constructor(public readonly status: number, message: string) {
