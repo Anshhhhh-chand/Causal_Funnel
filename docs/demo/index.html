@@ -29,11 +29,11 @@
     </main>
     <footer class="site-footer"><div class="brand"><span class="brand-mark">N</span><span>northstar<span class="brand-muted">supply</span></span></div><p>Objects for a life in motion.</p><p>© 2026 Northstar Supply Co.</p></footer>
 
-    <script src="../packages/tracker/dist/index.global.js"></script>
+    <script src="./tracker.js"></script>
     <script>
       (function () {
         const params = new URLSearchParams(window.location.search);
-        const endpoint = params.get('endpoint') || 'http://localhost:4000/api/events';
+        const endpoint = params.get('endpoint') || 'https://causalfunnel-api-iwce.onrender.com/api/events';
         if (window.CausalFunnelTracker) window.CausalFunnelTracker.init({ endpoint, siteId: 'northstar-demo' });
         let count = 0;
         const countNode = document.getElementById('bagCount');
