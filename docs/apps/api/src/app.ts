@@ -29,7 +29,7 @@ export function createApp({ repository, clientOrigins = [], maxEventAgeHours = 1
   app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
   app.use(cors({
     origin(origin, callback) {
-      if (!origin || clientOrigins.length === 0 || clientOrigins.includes(origin)) callback(null, true);
+      if (!origin || clientOrigins.length === 0 || clientOrigins.includes('*') || clientOrigins.includes(origin)) callback(null, true);
       else callback(new Error('Origin is not allowed'));
     },
   }));
